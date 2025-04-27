@@ -17,3 +17,19 @@ void	ft_machin(const char *format, ...)
 	va_end(ap);
 	return ;
 }
+
+25.04
+
+	va_list NOPE
+
+	appel: 		./pipex infile "cmd1" "cmd2" outfile
+
+	exemple:	./pipex infile "grep a1" "wc -w" outfile
+								=
+				< infile grep a1 | wc -w > outfile 
+				(met dans OUT le nbr de mots de toutes les lignes ou 'a1' est present dans IN)
+
+26.04
+
+	pipex tester: voir problemes (bash run.sh) et lister
+	
