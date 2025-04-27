@@ -1,3 +1,4 @@
 test
 pipex
 .gitignore
+*.o
