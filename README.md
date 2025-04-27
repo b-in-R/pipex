@@ -32,4 +32,8 @@ void	ft_machin(const char *format, ...)
 26.04
 
 	pipex tester: voir problemes (bash run.sh) et lister
+
+27.04
+
+	ajoute pipex tester au git: modif droits "infile without permission"
 	

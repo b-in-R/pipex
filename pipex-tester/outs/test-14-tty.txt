@@ -1,0 +1,14 @@
+==96443== Memcheck, a memory error detector
+==96443== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==96443== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==96443== Command: ../pipex /dev/null env_var cat outs/test-14.txt
+==96443== 
+==96443== 
+==96443== HEAP SUMMARY:
+==96443==     in use at exit: 0 bytes in 0 blocks
+==96443==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==96443== 
+==96443== All heap blocks were freed -- no leaks are possible
+==96443== 
+==96443== For lists of detected and suppressed errors, rerun with: -s
+==96443== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

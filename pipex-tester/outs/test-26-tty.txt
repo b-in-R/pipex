@@ -1,0 +1,23 @@
+==96659== Memcheck, a memory error detector
+==96659== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==96659== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==96659== Command: ../pipex assets/deepthought.txt cat notexisting outs/test-26.txt
+==96659== 
+==96663== 
+==96663== HEAP SUMMARY:
+==96663==     in use at exit: 0 bytes in 0 blocks
+==96663==   total heap usage: 31 allocs, 31 frees, 710 bytes allocated
+==96663== 
+==96663== All heap blocks were freed -- no leaks are possible
+==96663== 
+==96663== For lists of detected and suppressed errors, rerun with: -s
+==96663== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==96659== 
+==96659== HEAP SUMMARY:
+==96659==     in use at exit: 0 bytes in 0 blocks
+==96659==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==96659== 
+==96659== All heap blocks were freed -- no leaks are possible
+==96659== 
+==96659== For lists of detected and suppressed errors, rerun with: -s
+==96659== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

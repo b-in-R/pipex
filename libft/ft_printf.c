@@ -88,9 +88,3 @@ int	ft_printf(const char *format, ...)
 	va_end(ap);
 	return (nb);
 }
-
-int	main(int ac, char **av)
-{
-	ft_printf("test%i\n", ac);
-	return 0;
-}

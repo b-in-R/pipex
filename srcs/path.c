@@ -11,9 +11,9 @@ char	*join_path(char *dir, char *cmd)
 	full = ft_calloc(len_dir + len_cmd + 2, sizeof(char));
 	if (!full)
 		return (NULL);
-	ft_strcpy(full, dir);
+	ft_strlcpy(full, dir, len_dir + 1);
 	full[len_dir] = '/';
-	ft_strcpy(full + len_dir + 1, cmd);
+	ft_strlcpy(full + len_dir + 1, cmd, len_cmd + 1);
 	return (full);
 }
 
@@ -60,9 +60,7 @@ char	*find_cmd_path(char *cmd, char **envp)
 {
 	char	**paths;
 	char	*good_path;
-	int		i;
 
-	i = 0;
 	if (!cmd)
 		return (NULL);
 	if (ft_strchr(cmd, '/'))
