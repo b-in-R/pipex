@@ -36,4 +36,39 @@ void	ft_machin(const char *format, ...)
 27.04
 
 	ajoute pipex tester au git: modif droits "infile without permission"
-	
+
+28.04
+
+42_pipex_tester:
+
+	TESTNAME
+    OUT     EXIT    TIME    LEAKS   
+
+BASIC CHECKS
+# 7: "infiles/basic.txt" "cat -e" "grep nonexistingword" "outfiles/nonexistingfile"  
+   OK     [KO]     OK      OK
+
+ERROR CHECKING
+#11: "nonexistingfile" "cat -e" "ls" "outfiles/outfile"
+    [KO]    [KO]     OK     [KO]    
+#12: "nonexistingfile" "cat" "sleep 3" "outfiles/outfile" 
+    [KO]    [KO]    [KO]    [KO]    
+#13: "infiles/infile_without_permissions" "cat -e" "cat -e" "outfiles/outfile"
+    [KO]    [KO]     OK     [KO]    
+#14: "infiles/basic.txt" "cat -e" "cat -e" "outfiles/outfile_without_permissions" 
+     OK      OK      OK     [KO]    
+#15: "infiles/basic.txt" "sleep 3" "cat -e" "outfiles/outfile_without_permissions"
+     OK      OK     [KO]    [KO]    
+#16: "nonexistingfile" "cat -e" "cat -e" "outfiles/outfile_without_permissions"
+     OK      OK      OK     [KO]    
+#17: "infiles/basic.txt" "nonexistingcommand" "cat -e" "outfiles/outfile"
+    [KO]     OK      OK      OK     
+#18: "infiles/basic.txt" "cat -e" "nonexistingcommand" "outfiles/outfile"
+    [KO]    [KO]     OK      OK    
+#19: "infiles/basic.txt" "cat -e" "cat -nonexistingflag" "outfiles/outfile"
+     OK     [KO]     OK      OK    
+#23: "" "cat -e" "cat -e" "outfiles/outfile"
+                            [KO]    
+
+
+	[test]

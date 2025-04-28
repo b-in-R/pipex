@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rabiner <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: binr <binr@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 17:24:57 by rabiner           #+#    #+#             */
-/*   Updated: 2025/03/17 17:25:11 by rabiner          ###   ########.fr       */
+/*   Updated: 2025/04/28 16:43:17 by binr             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memset(void *b, int c, size_t len);
 
+// ft_printf
 int		ft_printf(const char *format, ...);
 int		check_format(char format, va_list ap);
 int		check_uint(char format, va_list ap);
