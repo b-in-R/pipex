@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: binr <binr@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: rabiner <rabiner@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 16:35:25 by binr              #+#    #+#             */
-/*   Updated: 2025/04/28 16:35:26 by binr             ###   ########.fr       */
+/*   Updated: 2025/04/29 15:48:13 by rabiner          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	free_strs(char **strs)
 
 void	error_close_exit(t_fd *fd, char *str, int s_free, char **strs)
 {
+	dup2(2, STDOUT_FILENO);
 	ft_printf("Error - %s\n", str);
 	if (s_free == 1)
 	{

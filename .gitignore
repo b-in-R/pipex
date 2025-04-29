@@ -6,3 +6,5 @@ outfile*
 *.o
 /42*
 pipex-tester
+*.a
+42_pipex*

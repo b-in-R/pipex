@@ -71,4 +71,21 @@ ERROR CHECKING
                             [KO]    
 
 
-	[test]
+
+
+29.04	CORR:
+
+	commandes a traiter:
+
+		./pipex in cat "grep 'ca va'" out --> simples guillemets ' '
+		
+		./pipex in cat "awk '{print \$2}'" out --> ? simples guilemets?
+			< in cat | awk '{print $2}' >  out
+				(met dans out 2eme col de chaque ligne)
+
+		
+		unset PATH	--> si PATH pas trouve, erreur (cmd not found)
+
+	voir details: 
+
+		dup2(2, STDOUT_FILENO); (utils.c)
