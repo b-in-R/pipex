@@ -1,8 +1,6 @@
 test
 pipex
 .gitignore
-infile*
-outfile*
 *.o
 /42*
 pipex-tester
