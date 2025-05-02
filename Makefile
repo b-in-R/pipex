@@ -6,7 +6,7 @@
 #    By: binr <binr@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/28 16:35:53 by binr              #+#    #+#              #
-#    Updated: 2025/04/28 17:41:39 by binr             ###   ########.fr        #
+#    Updated: 2025/05/02 17:13:54 by binr             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,30 +16,34 @@ CC = gcc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
 
-LIBFT_DIR = libft
 SRCS_DIR = srcs
+SRCS = main.c pipex.c \
+		path.c utils.c
 
-SRCS = srcs/main.c srcs/pipex.c \
-		srcs/path.c srcs/utils.c
+SRCS := $(addprefix $(SRCS_DIR)/, $(SRCS))
 
-OBJS = $(SRCS:.c=.o)
+OBJS_DIR = $(SRCS_DIR)/objs
+OBJS = $(SRCS:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
 
-LIBFT_A = $(LIBFT_DIR)/libft.a
+LIBFT_DIR = libft
+LIBFT = $(LIBFT_DIR)/libft.a
 
-INCLUDES = -I$(LIBFT_DIR) -I$(SRCS_DIR) -I/usr/include
+INCLUDES = -I. -I$(LIBFT_DIR) 
+#-I/usr/include
 
-SANITIZE_FLAGS = -fsanitize=address -g
+all: $(LIBFT) $(OBJS_DIR) $(NAME)
 
-all: $(NAME)
+$(OBJS_DIR):
+	@mkdir -p $(OBJS_DIR)
 
-$(NAME): $(OBJS) $(LIBFT_A)
-	$(CC) $(CFLAGS) $(INCLUDES) $(OBJS) $(LIBFT_A) -o $(NAME)
+$(LIBFT):
+	make -C $(LIBFT_DIR) all
+
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) $(INCLUDES) $(OBJS) $(LIBFT) -o $(NAME)
 
 $(SRCS_DIR)/%.o: $(SRCS_DIR)/%.c
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
-
-$(LIBFT_A):
-	make -C $(LIBFT_DIR)
 
 clean:
 	$(RM) $(OBJS)
@@ -51,7 +55,4 @@ fclean: clean
 
 re:	fclean all
 
-fsan: CFLAGS += $(SANITIZE_FLAGS)
-fsan: fclean $(NAME)
-
-.PHONY: all clean fclean re fsan
+.PHONY: all clean fclean re

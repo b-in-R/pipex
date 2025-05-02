@@ -1,7 +1,0 @@
-make : on entre dans le répertoire « /home/binr/Prog42/pipex »
-gcc -Wall -Wextra -Werror -Ilibft -Isrcs -I/usr/include -c srcs/main.c -o srcs/main.o
-gcc -Wall -Wextra -Werror -Ilibft -Isrcs -I/usr/include -c srcs/path.c -o srcs/path.o
-gcc -Wall -Wextra -Werror -Ilibft -Isrcs -I/usr/include -c srcs/pipex.c -o srcs/pipex.o
-gcc -Wall -Wextra -Werror -Ilibft -Isrcs -I/usr/include -c srcs/utils.c -o srcs/utils.o
-gcc -Wall -Wextra -Werror -Ilibft -Isrcs -I/usr/include srcs/main.o srcs/path.o srcs/pipex.o srcs/utils.o libft/libft.a -o pipex
-make : on quitte le répertoire « /home/binr/Prog42/pipex »
