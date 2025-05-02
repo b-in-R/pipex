@@ -6,7 +6,7 @@
 /*   By: binr <binr@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 16:33:59 by binr              #+#    #+#             */
-/*   Updated: 2025/04/28 17:51:30 by binr             ###   ########.fr       */
+/*   Updated: 2025/05/02 22:29:09 by binr             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	execute_cmd(char *cmd, char **envp, t_fd *fd)
 	char	**args;
 	char	*cmd_path;
 
-	args = ft_split(cmd, ' ');
+	args = ft_split_quote(cmd, ' ');
 	if (!args)
 		error_close_exit(fd, "execute_cmd -> args", 0, NULL);
 	cmd_path = find_cmd_path(args[0], envp);

@@ -6,7 +6,7 @@
 #    By: binr <binr@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/28 16:35:53 by binr              #+#    #+#              #
-#    Updated: 2025/05/02 17:13:54 by binr             ###   ########.fr        #
+#    Updated: 2025/05/02 17:19:32 by binr             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,8 +28,7 @@ OBJS = $(SRCS:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-INCLUDES = -I. -I$(LIBFT_DIR) 
-#-I/usr/include
+INCLUDES = -I. -I$(LIBFT_DIR) -I/usr/include
 
 all: $(LIBFT) $(OBJS_DIR) $(NAME)
 
@@ -42,7 +41,7 @@ $(LIBFT):
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(INCLUDES) $(OBJS) $(LIBFT) -o $(NAME)
 
-$(SRCS_DIR)/%.o: $(SRCS_DIR)/%.c
+$(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:

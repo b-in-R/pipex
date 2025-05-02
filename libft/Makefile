@@ -6,7 +6,7 @@
 #    By: binr <binr@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/28 16:35:45 by binr              #+#    #+#              #
-#    Updated: 2025/05/02 17:11:19 by binr             ###   ########.fr        #
+#    Updated: 2025/05/02 17:39:50 by binr             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,9 @@ CFLAGS = -Wall -Wextra -Werror
 
 SRCS = ft_calloc.c ft_memset.c \
 		ft_printf.c ft_printf_nbrs.c ft_printf_write.c \
-		ft_split.c ft_strchr.c ft_strdup.c ft_strjoin.c \
-		ft_strlcpy.c ft_strlen.c ft_strncmp.c
+		ft_strchr.c ft_strdup.c ft_strjoin.c \
+		ft_strlcpy.c ft_strlen.c ft_strncmp.c \
+		ft_split.c ft_split_quote.c
 
 OBJS_DIR = objs_libft
 OBJS = $(SRCS:.c=.o)

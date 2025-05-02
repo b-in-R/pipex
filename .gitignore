@@ -1,8 +1,9 @@
 test
 pipex
-.gitignore
 *.o
 /42*
 pipex-tester
 *.a
 42_pipex*
+tests.txt
+valgrind.txt

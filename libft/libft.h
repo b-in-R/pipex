@@ -6,7 +6,7 @@
 /*   By: binr <binr@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 17:24:57 by rabiner           #+#    #+#             */
-/*   Updated: 2025/04/28 16:43:17 by binr             ###   ########.fr       */
+/*   Updated: 2025/05/02 22:43:20 by binr             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,14 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct s_split
+{
+	size_t	i;
+	size_t	j;
+	int		start_word;
+	int		in_quote;
+}			t_split;
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
@@ -74,8 +82,11 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
+
 char	**ft_split(char const *s, char c);
 void	ft_split_free(char **tab);
+char	**ft_split_quote(char const *s, char c);
+
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
